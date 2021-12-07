@@ -62,7 +62,7 @@ class whale:
 
 
 # whale optimization algorithm(WOA)
-def woa(fitness, max_iter, n, dim, minx, maxx, network):
+def woa(fitness, max_iter, n, dim, minx, maxx, network, rewiring):
     rnd = random.Random(0)
 
     # create n random whales
@@ -143,8 +143,19 @@ def woa(fitness, max_iter, n, dim, minx, maxx, network):
 
         Iter += 1
         Xbest_array.append(fitness(Xbest))
+        for j in range(0, n):            
+            edges = network.adj[j]            
+            
+            neighbors=[]
+            for k in edges:                
+                neighbors.append(k)                        
+            
+            for i in range(0,len(neighbors)):
+                if random.random() < rewiring:                    
+                    random_index = int(random.random()*n)                    
+                    network.remove_edge(j, neighbors[i])                    
+                    network.add_edge(j,random_index)
     # end-while
 
     # returning the best solution
     return Xbest_array, Xbest
-
