@@ -41,12 +41,13 @@ for i in range(number_experiments):
     matrix[i,:] = best_array
     
 average = np.average(matrix, axis=0)
+average = np.abs(-959.6407-average)
 np.save("woawsr2", average)
 plt.figure(dpi=300)
 plt.grid()
 plt.xlabel("Average in iterations")
 plt.ylabel("Fitness")
-
+plt.yscale("log")
 plt.plot(average)
 #plt.show()
 plt.savefig("woa2WSR.png")
