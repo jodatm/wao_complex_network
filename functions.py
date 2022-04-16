@@ -32,15 +32,12 @@ def function_matyas(position):
     else:
         return float("inf")
 
-#Lévi function N.13
-def function_levi(position):
+#Three-hump camel function function
+def function_three_hump(position):
     x = position[0]
     y = position[1]
-    a = math.pow(math.sin(3*math.pi*x),2)
-    b = math.pow(x-1,2)*(1+math.pow(math.sin(3*math.pi*y),2))
-    c = math.pow(y-1,2)*(1+math.pow(math.sin(2*math.pi*y),2))
-    if x>=-10 and y <= 10:
-        return a+b+c
+    if x>=-5 and y<=5:
+        return 2*x**2-1.05*x**4+(x**6)/6+x*y+y**2
     else:
         return float("inf")
 

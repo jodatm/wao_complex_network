@@ -55,8 +55,8 @@ rewiring = 0.35
 experiments_wao(f.function_bukin,"bukinWAO",max_iter,number_experiments,num_whales, dim)
 experiments_network(f.function_bukin,"bukinNetwork",max_iter,number_experiments,num_whales, dim,rewiring)
 
-experiments_wao(f.function_levi,"leviWAO",max_iter,number_experiments,num_whales, dim)
-experiments_network(f.function_levi,"leviNetwork",max_iter,number_experiments,num_whales, dim,rewiring)
+experiments_wao(f.function_three_hump,"humpWAO",max_iter,number_experiments,num_whales, dim)
+experiments_network(f.function_three_hump,"humpNetwork",max_iter,number_experiments,num_whales, dim,rewiring)
 
 experiments_wao(f.function_matyas,"matyasWAO",max_iter,number_experiments,num_whales,dim)
 experiments_network(f.function_matyas,"matyasNetwork",max_iter,number_experiments,num_whales, dim,rewiring)
