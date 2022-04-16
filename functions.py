@@ -10,7 +10,7 @@ def function_bukin(position):
         return 100*math.sqrt(abs(y-0.01*x**2))+0.01*abs(x+10)
     else:
         return float("inf")
-# schaffer function 4
+# schaffer function 2
 def function_schaffer(position):
     x = position[0]
     y = position[1]
