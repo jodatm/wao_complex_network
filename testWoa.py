@@ -47,11 +47,11 @@ def experiments_network(f,filename,max_iter,number_experiments,num_whales,dim,re
     #plt.show()
     plt.savefig(filename+".png")
 
-max_iter = 100
-number_experiments = 100
-num_whales = 100
+max_iter = 50
+number_experiments = 50
+num_whales = 150
 dim = 2
-rewiring = 0.3
+rewiring = 0.35
 experiments_wao(f.function_bukin,"bukinWAO",max_iter,number_experiments,num_whales, dim)
 experiments_network(f.function_bukin,"bukinNetwork",max_iter,number_experiments,num_whales, dim,rewiring)
 
