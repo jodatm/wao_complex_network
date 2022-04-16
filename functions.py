@@ -2,21 +2,47 @@ import numpy as np
 import math
 import random
 
-def function_eggholder(position):
-	# X is a np.array
-	return (-(position[1] + 47) * np.sin(np.sqrt(abs(position[0]/2 + (position[1] + 47)))) -position[0] * np.sin(np.sqrt(abs(position[0] - (position[1] + 47)))))
-
+def function_bukin(position):
+    # X is a np.array
+    x = position[0]
+    y = position[1]
+    if x >= -15 and x <= -5 and y >= -3 and y <= 3:
+        return 100*math.sqrt(abs(y-0.01*x**2))+0.01*abs(x+10)
+    else:
+        return float("inf")
 # schaffer function 4
 def function_schaffer(position):
+    x = position[0]
+    y = position[1]
     top = math.pow(math.sin(math.pow(position[0],2) - math.pow(position[1],2)),2)- 0.5
     button = math.pow(1+(0.0001*(math.pow(math.pow(position[0],2) + math.pow(position[1],2),2))),2)
-    return 0.5 + (top/button)
+    if x>=-100 and y <= 100:
+        return 0.5 + (top/button)
+    else:
+        return float("inf")
 
-# schaffer function 4
+# function_matyas function
 def function_matyas(position):
+    x = position[0]
+    y = position[1]
     first = math.pow(position[0],2) + math.pow(position[1],2)
     second = 0.26*first- (0.48*position[0]*position[1])
-    return second
+    if x>= -10 and y <= 10:
+        return second
+    else:
+        return float("inf")
+
+#Lévi function N.13
+def function_levi(position):
+    x = position[0]
+    y = position[1]
+    a = math.pow(math.sin(3*math.pi*x),2)
+    b = math.pow(x-1,2)*(1+math.pow(math.sin(3*math.pi*y),2))
+    c = math.pow(y-1,2)*(1+math.pow(math.sin(2*math.pi*y),2))
+    if x>=-10 and y <= 10:
+        return a+b+c
+    else:
+        return float("inf")
 
 def qap_cost(chromosome, distances, flows):
     """Gets the fitness score for a particular chromosome using the formula minϕ∈Sn ∑ni=1 ∑nj=1 fij⋅dϕ(i)ϕ(j)
