@@ -42,7 +42,7 @@ plt.savefig("function_eggholder.png")
 """
 
 plt.figure(dpi=300)
-plt.title("Comparations functions")
+#plt.title("Comparations functions")
 plt.grid()
 plt.xlabel("Iteration")
 plt.ylabel("Fitness")
